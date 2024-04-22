@@ -105,7 +105,7 @@ if __name__ == "__main__":
   print(fw_version)
   if fw_version not in SUPPORTED_FW_VERSIONS.keys():
     print("radar not supported! (aborted)")
-    print(SUPPORT_FW_VERSION.keys())
+    print(SUPPORTED_FW_VERSIONS.keys())
     pass
 
   print("[GET CONFIGURATION]")
