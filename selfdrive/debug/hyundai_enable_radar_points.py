@@ -29,7 +29,7 @@ class ConfigValues(NamedTuple):
 #       because this script uses a different diagnostic session type
 SUPPORTED_FW_VERSIONS = {
   # 2020 SONATA
-  b'DN8c SCC FHCUP      1.00 1.00 99110-L4000\x01\x07\x14\x17    ': ConfigValues(
+  b"DN8c SCC FHCUP      1.00 1.00 99110-L4000\x01\x07\x14\x17    ": ConfigValues(
     default_config=b"\x00\x00\x00\x01\x00\x00",
     tracks_enabled=b"\x00\x00\x00\x01\x00\x01"),
   b"DN8_ SCC FHCUP      1.00 1.00 99110-L0000\x19\x08)\x15T    ": ConfigValues(
