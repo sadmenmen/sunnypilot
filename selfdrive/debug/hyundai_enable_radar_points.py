@@ -111,7 +111,7 @@ if __name__ == "__main__":
   print("[GET CONFIGURATION]")
   config_data_id : DATA_IDENTIFIER_TYPE = 0x0142 # type: ignore
   current_config = uds_client.read_data_by_identifier(config_data_id)
-  config_values = SUPPORTED_FW_VERSIONS[fw_version]
+  config_values = b"DN8c SCC FHCUP      1.00 1.00 99110-L4000\x01\x07\x14\x17    "
   new_config = config_values.default_config if args.default else config_values.tracks_enabled
   print(f"current config: 0x{current_config.hex()}")
   if current_config != new_config:
