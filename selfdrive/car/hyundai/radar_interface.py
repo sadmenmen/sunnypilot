@@ -6,7 +6,7 @@ from openpilot.selfdrive.car.interfaces import RadarInterfaceBase
 from openpilot.selfdrive.car.hyundai.hyundaicanfd import CanBus
 from openpilot.selfdrive.car.hyundai.values import DBC, HyundaiFlagsSP, CANFD_CAR
 
-RADAR_START_ADDR = 0x500
+RADAR_START_ADDR = 0500
 RADAR_MSG_COUNT = 32
 
 # POC for parsing corner radars: https://github.com/commaai/openpilot/pull/24221/
@@ -39,9 +39,9 @@ class RadarInterface(RadarInterfaceBase):
     self.enhanced_scc = (CP.spFlags & HyundaiFlagsSP.SP_ENHANCED_SCC) and DBC[CP.carFingerprint]['radar'] is None
     self.camera_scc = CP.spFlags & HyundaiFlagsSP.SP_CAMERA_SCC_LEAD
     self.updated_messages = set()
-    self.trigger_msg = 0x2AB if self.enhanced_scc else \
-                       0x1A0 if self.camera_scc and CP.carFingerprint in CANFD_CAR else \
-                       0x420 if self.camera_scc else \
+    self.trigger_msg = 02AB if self.enhanced_scc else \
+                       01A0 if self.camera_scc and CP.carFingerprint in CANFD_CAR else \
+                       0420 if self.camera_scc else \
                        (RADAR_START_ADDR + RADAR_MSG_COUNT - 1)
     self.track_id = 0
 
