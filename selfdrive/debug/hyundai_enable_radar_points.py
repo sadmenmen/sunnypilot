@@ -106,7 +106,7 @@ if __name__ == "__main__":
   if fw_version not in SUPPORTED_FW_VERSIONS.keys():
     print("radar not supported! (aborted)")
     print(SUPPORTED_FW_VERSIONS.keys())
-    pass
+    sys.exit(1)
 
   print("[GET CONFIGURATION]")
   config_data_id : DATA_IDENTIFIER_TYPE = 0x0142 # type: ignore
