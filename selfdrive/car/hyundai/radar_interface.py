@@ -20,7 +20,7 @@ def get_radar_can_parser(CP):
         return None
     else:
       if CP.spFlags & HyundaiFlagsSP.SP_ENHANCED_SCC:
-        lead_src, bus = "ESCC", 1
+        lead_src, bus = "ESCC", 0
       elif CP.spFlags & HyundaiFlagsSP.SP_CAMERA_SCC_LEAD:
         lead_src, bus = "SCC11", 2
       else:
